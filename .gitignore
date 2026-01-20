@@ -1,0 +1,37 @@
+# Compiled object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Executables (Linux default: a.out)
+a.out
+*.out
+*.app
+*.exe
+
+# Shared and static libraries
+*.so
+*.a
+*.la
+*.lo
+
+# Debug and profiling files
+*.dSYM/
+*.su
+*.stackdump
+*.swp
+
+# Build directories
+build/
+bin/
+lib/
+dist/
+output/
+
+# Temporary files
+*.tmp
+
+#test.cpp
+
+.vscode
