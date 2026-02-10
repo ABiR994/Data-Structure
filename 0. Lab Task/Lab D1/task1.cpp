@@ -39,20 +39,24 @@ float average(int arr[], int n) {
 }
 
 int main() {
-    int arr[5];
+    int n;
+    cout << "Enter the number of elements: ";
+    cin >> n;
 
-    input(arr, 5);
+    int arr[n];
+
+    input(arr, n);
 
     cout << "Reverse order: ";
-    for(int i = 4; i >= 0; i--) {
+    for(int i = n - 1; i >= 0; i--) {
         cout << arr[i] << " ";
     }
     cout << endl;
 
-    cout << "Largest element: " << findMax(arr, 5) << endl;
-    cout << "Smallest element: " << findMin(arr, 5) << endl;
+    cout << "Largest element: " << findMax(arr, n) << endl;
+    cout << "Smallest element: " << findMin(arr, n) << endl;
 
-    cout << "Average: " << average(arr, 5) << endl;
+    cout << "Average: " << average(arr, n) << endl;
 
     return 0;
 }
