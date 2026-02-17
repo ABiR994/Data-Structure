@@ -16,8 +16,8 @@ void input(student &s) {
     cin >> s.cgpa;
 }
 
-void printStudentInfo(student s) {
-    cout << "ID: " << s.id << ", Credits: " << s.credits << ", CGPA: " << s.cgpa << endl;
+void printStudentId(student s) {
+    cout << "Student ID: " << s.id << endl;
 }
 
 int main() {
@@ -31,19 +31,19 @@ int main() {
 
     cout << endl;
 
-    cout << "Students with CGPA >= 3.80 and more than 30 credits:" << endl;
+    cout << "IDs of students with CGPA >= 3.80 and more than 30 credits:" << endl;
     for(int i = 0; i < 10; i++) {
         if((students[i].cgpa >= 3.80) && (students[i].credits >= 30)) {
-            printStudentInfo(students[i]);
+            printStudentId(students[i]);
         }
     }
 
     cout << endl;
 
-    cout << "Students with CGPA < 2.50:" << endl;
+    cout << "IDs of students with CGPA < 2.50:" << endl;
     for(int i = 0; i < 10; i++) {
         if(students[i].cgpa < 2.50) {
-            printStudentInfo(students[i]);
+            printStudentId(students[i]);
         }
     }
 
