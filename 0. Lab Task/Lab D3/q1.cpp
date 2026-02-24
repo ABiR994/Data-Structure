@@ -20,14 +20,31 @@ void displayClassroomInfo(Classroom &cls) {
 }
 
 int main() {
-    Classroom cls1;
+    int n;
+    cout << "Enter number of classrooms: ";
+    cin >> n;
+    cout << endl;
 
-    cls1.classroom_no = 101;
-    cls1.capacity = 30;
-    cls1.course = "Data Structures";
-    cls1.floor.floor_no = 1;
+    Classroom classrooms[n];
 
-    displayClassroomInfo(cls1);
+    for (int i = 0; i < n; i++) {
+        cout << "Classroom " << i + 1 << ":" << endl;
+        cout << "Classroom No: ";
+        cin >> classrooms[i].classroom_no;
+        cout << "Capacity: ";
+        cin >> classrooms[i].capacity;
+        cin.ignore();
+        cout << "Course: ";
+        getline(cin, classrooms[i].course);
+        cout << "Floor No: ";
+        cin >> classrooms[i].floor.floor_no;
+    }
+    cout << endl;
 
+    for (int i = 0; i < n; i++) {
+        cout << "--- Classroom " << i + 1 << " Information ---" << endl;
+        displayClassroomInfo(classrooms[i]);
+        cout << endl;
+    }
     return 0;
 }
