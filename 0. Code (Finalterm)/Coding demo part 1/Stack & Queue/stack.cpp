@@ -1,55 +1,86 @@
 #include <iostream>
 using namespace std;
 
-class stack
-{
-public:
-    int size = 10;
-    int top = -1;
-    int arr[10];
+class Stack {
+    public:
+        static const int size = 10;
+        int top = -1;
+        int arr[size];
 
-    void push(int element)
-    {
-        if(top == size-1)
-        {
-            cout<<"Stack is full"<<endl;
+        bool isEmpty() {
+            if(top == -1) {
+                return true;
+            } else {
+                return false;
+            }
         }
-        else
-        {
-            top++;
-            arr[top] = element;
+
+        bool isFull() {
+            if(top == size - 1) {
+                return true;
+            } else {
+                return false;
+            }
         }
-    }
 
-    int pop()
-    {
-        if(top == -1)
-            cout<<"Stack is empty"<<endl;
-        else
-        {
-            return arr[top--];
+        void push(int element) {
+            if(isFull()) {
+                cout << "Stack is full. Unable to push." << endl;
+            } else {
+                arr[++top] = element;
+            }
         }
-    }
 
-    void display()
-    {
-        for(int i=0; i<=top; i++)
-            cout<<arr[i]<< " ";
-    }
+        int pop() {
+            if(isEmpty()) {
+                cout << "Stack is empty." << endl;
+                return -1;
+            } else {
+                return arr[top--];
+            }
+        }
 
+        void topElement() {
+            if(isEmpty()) {
+                cout << "Stack is empty." << endl;
+            } else {
+                cout << "Top element: " << arr[top] << endl;
+            }
+        }
+
+        void show() {
+            if(isEmpty()) {
+                cout << "Stack is empty." << endl;
+            } else {
+                cout << "Stack: ";
+                for(int i = top; i >= 0; i--) {
+                    cout << arr[i] << " ";
+                }
+                cout << endl;
+            }
+        }
 };
 
-int main()
-{
-    stack s;
+int main() {
+    Stack s;
 
-    s.push(4);
+    s.show();
+
+    s.push(12);
+    s.push(14);
     s.push(5);
-    s.display();
+    s.push(21);
+    s.push(1);
+    s.push(47);
 
-    cout<<"Popped: "<<s.pop()<<endl;
+    s.show();
 
-    s.display();
+    s.topElement();
+
+    s.pop();
+    s.pop();
+
+    s.show();
 
     return 0;
 }
