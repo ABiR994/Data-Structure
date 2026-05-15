@@ -2,19 +2,19 @@
 using namespace std;
 
 void fibonacci(int n) {
-    if (n <= 0) {
+    if (n < 0) {
         cout << "Please enter a positive integer." << endl;
         return;
-    } else if (n == 1) {
+    } else if (n == 0) {
         cout << n << "th Fibonacci number is 0" << endl;
         return;
-    } else if (n == 2) {
+    } else if (n == 1) {
         cout << n << "th Fibonacci number is 1" << endl;
         return;
     }
     int a = 0, b = 1;
     int temp;
-    for(int i = 3; i <= n; i++) {
+    for(int i = 2; i <= n; i++) {
         temp = a + b;
         a = b;
         b = temp;
